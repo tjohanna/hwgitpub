@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitpud Lab</title>
+
+<style>
+    
+    body {
+        color: blanchedalmond;
+        background-color: steelblue;
+      }
+
+</style>
+
+</head>
+
+<body>
+
+<h1> Index Page</h1>
+
+<p> NOTE: The Show page does not work. I couldn't firgure out how to complete the assignment by keeing drinks & food in separate files (might have over complicated it). I then decided to combine both drinks and food into one file but ran into the bloker to show detials of each in my server.js file lines 45-47. For the first part of the assignment (just Drinks) I was able to get everything to work.    </p>
+
+<h2> Drinks </h2>
+<ul>
+    <% for(let i = 0; i < allMenu.drinks.length; i++) { %>
+
+
+    <li>
+        
+        <a href="/food/<%=i%>">
+            <%const newAllDrinks = allMenu.drinks[i].name;%>
+            <%const drinkName = newAllDrinks.charAt(0).toUpperCase() + newAllDrinks.slice(1); %>
+            <%=drinkName %></a>
+           
+
+        </li>
+        <% } %>
+        </ul>
+
+<br> <br><br>
+
+<h2> Food </h2>
+<ul>
+ 
+<% for(let i = 0; i < allMenu.food.length; i++) { %>
+    <li>
+            <a href="/food/<%=i%>">
+                <%const newAllFoods = allMenu.food[i].name;%>
+                <%const foodName = newAllFoods.charAt(0).toUpperCase() + newAllFoods.slice(1); %>
+                <%=foodName %></a>          
+
+
+        </li>
+
+<% } %>
+</ul>
+
+<br>
+    
+</body>
+</html>
